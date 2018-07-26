@@ -1,2 +1,3 @@
 
 tip_project/settings_secret.py
+tip_project/settings/local.py

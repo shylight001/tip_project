@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['pure-woodland-86484.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -149,6 +149,9 @@ LOGGING = {
         },
     },
     'handlers': {
+        'console': {
+                'class': 'logging.StreamHandler',
+            },
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
@@ -158,13 +161,8 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers':['file'],
-            'propagate': True,
-            'level':'DEBUG',
-        },
-        'MYAPP': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
         },
     }
 }

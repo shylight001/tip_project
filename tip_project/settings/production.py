@@ -149,9 +149,6 @@ LOGGING = {
         },
     },
     'handlers': {
-        'console': {
-                'class': 'logging.StreamHandler',
-            },
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
@@ -161,8 +158,13 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            'handlers':['file'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'MYAPP': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
         },
     }
 }

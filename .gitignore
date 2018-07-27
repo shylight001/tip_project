@@ -3,3 +3,5 @@ tip_project/settings_secret.py
 tip_project/settings/local.py
 /tip_project/staticfiles/*
 /tip_project/static/*
+!/tip_project/staticfiles/__init__.py
+!/tip_project/static/__init__.py

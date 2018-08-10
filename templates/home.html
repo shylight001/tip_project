@@ -2,5 +2,27 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>Homepage.</h1>
-{% endblock %}
+    {% for post in object_list %}
+        <div class="post-entry">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.body  }}</p>
+            <p>{{ post.payment  }}</p>
+            <p>{{ post.address}}</p>
+            <p>{{ post.total}}</p>
+            <p>{{ post.tips}}</p>
+            <p>{{ post.last_modified}}</p>
+            <p>{{ post.time_created}}</p>
+        </div>
+    {% endfor %}
+    <h1>Nothing here </h1>
+    {% load tz %}
+
+    {% localtime on %}
+       <h1> {{ value }} </h1>
+    {% endlocaltime %}
+
+    {% localtime off %}
+       <h1> {{ value }} </h1>
+    {% endlocaltime %}
+    
+{% endblock content%}

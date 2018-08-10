@@ -18,6 +18,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # k - notice that both blog.urls and pages.urls configured '' path, while both of them use different view classes, only blog.blogListView load model object. 
+    # k - django will search urls from top to bottom, so if blog.urls moved beneath pages.url, it would lead to pages.homepageview; in other words, blog.bloglistview won't load.
+    path('',include('blog.urls')),
     path('',include('pages.urls')),
     path('posts',include('posts.urls')),
+    
 ]

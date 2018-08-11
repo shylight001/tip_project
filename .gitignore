@@ -2,6 +2,7 @@
 tip_project/settings_secret.py
 tip_project/settings/local.py
 psycopg_test.py
+data.json
 
 !/tip_project/staticfiles/__init__.py
 !/tip_project/static/__init__.py

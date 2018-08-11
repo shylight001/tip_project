@@ -1,6 +1,4 @@
-*.css
-tip_project/static/*
-tip_project/staticfiles/*
+
 tip_project/settings/local.py
 psycopg_test.py
 data.json

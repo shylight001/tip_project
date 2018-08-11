@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+{% extends 'base.html'%}
+
+{% block content %}
+    <div class="post-entry">
+        <h2>{{ detailed_post.title }}</h2>
+        <p>{{ detailed_post.body  }}</p>
+        <p>{{ detailed_post.payment  }}</p>
+        <p>{{ detailed_post.address}}</p>
+        <p>{{ detailed_post.total}}</p>
+        <p>{{ detailed_post.tips}}</p>
+        <p>{{ detailed_post.last_modified}}</p>
+        <p>{{ detailed_post.time_created}}</p>
+    </div>
+{% endblock content%}

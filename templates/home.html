@@ -4,7 +4,7 @@
 {% block content %}
     {% for post in object_list %}
         <div class="post-entry">
-            <h2><a href="">{{ post.title }}</a></h2>
+            <h2><a href="{% url 'post_detail' post.pk%}">{{ post.title }}</a></h2>
             <p>{{ post.body  }}</p>
             <p>{{ post.payment  }}</p>
             <p>{{ post.address}}</p>
@@ -14,15 +14,9 @@
             <p>{{ post.time_created}}</p>
         </div>
     {% endfor %}
-    <h1>Nothing here </h1>
-    {% load tz %}
-
-    {% localtime on %}
-       <h1> {{ value }} </h1>
-    {% endlocaltime %}
-
-    {% localtime off %}
-       <h1> {{ value }} </h1>
-    {% endlocaltime %}
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="{{ bg_url }}" data-natural-width=4032 data-natural-height=3024 data-position-y=center>
+        <div class="overlay"></div>
+        <h1>Home Page </h1>
+    </section>
     
 {% endblock content%}
